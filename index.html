@@ -131,6 +131,33 @@
       color: var(--tj-color-text-body-2);
       opacity: .7;
     }
+    /* Shrink the Google reviews widget in the hero — was overlapping other elements */
+    .banner-img-area .customers-box {
+      max-width: 210px;
+      padding: 16px 18px 14px 18px !important;
+    }
+    .banner-img-area .customers-box .rating-area {
+      padding: 12px 0 5px 0;
+      gap: 5px;
+    }
+    .banner-img-area .customers-box .customers ul li img {
+      width: 32px;
+      height: 32px;
+    }
+    .banner-img-area .customers-box .customers ul li {
+      margin-inline-start: -12px;
+    }
+    .banner-img-area .customers-box .customers-number {
+      font-size: 32px;
+    }
+    .banner-img-area .customers-box .star-ratings {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .banner-img-area .customers-box .customers-text {
+      font-size: 11px;
+      line-height: 1.4;
+    }
     @media (max-width: 767px) {
       .banner-img-area .banner-img { min-height: 360px !important; }
       .hero-dash-card { padding: 20px 20px; }
