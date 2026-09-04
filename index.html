@@ -79,6 +79,22 @@
       color: var(--tj-color-theme-dark);
       font-weight: 600;
     }
+    .hero-dash-card__tab {
+      cursor: pointer;
+      font-family: inherit;
+      transition: background .15s ease, border-color .15s ease, color .15s ease;
+    }
+    .hero-dash-card__tab:hover:not(.hero-dash-card__tab--active) {
+      border-color: rgba(250, 251, 251, .25);
+      color: var(--tj-color-heading-primary);
+    }
+    .hero-dash-card__tab:focus-visible {
+      outline: 2px solid var(--tj-color-theme-primary);
+      outline-offset: 2px;
+    }
+    .hero-dash-card__panel[hidden] {
+      display: none;
+    }
     .hero-dash-card__chart {
       display: block;
       width: 100%;
@@ -569,42 +585,113 @@
                 <div class="banner-img-area">
                   <div class="banner-img tj-fade-anim" data-delay="0.3" data-direction="right"
                     style="mask-image:none;-webkit-mask-image:none;display:flex;align-items:center;justify-content:center;min-height:520px;overflow:visible;">
-                    <div class="hero-dash-card" role="img" aria-label="Panel ilustrativo de campañas con tendencia de crecimiento">
+                    <div class="hero-dash-card" aria-label="Panel ilustrativo de resultados por área">
                       <div class="hero-dash-card__head">
                         <span class="hero-dash-card__dot"></span>
-                        <span class="hero-dash-card__title">Campañas · En Vivo</span>
+                        <span class="hero-dash-card__title">Resultados en Tiempo Real</span>
                       </div>
-                      <div class="hero-dash-card__tabs">
-                        <span class="hero-dash-card__tab hero-dash-card__tab--active">Google Ads</span>
-                        <span class="hero-dash-card__tab">Meta Ads</span>
-                        <span class="hero-dash-card__tab">TikTok Ads</span>
+                      <div class="hero-dash-card__tabs" role="tablist" aria-label="Áreas de resultados">
+                        <button type="button" class="hero-dash-card__tab hero-dash-card__tab--active" role="tab"
+                          aria-selected="true" aria-controls="heroDashPanel-ads" id="heroDashTab-ads"
+                          data-tab-target="ads">Ads</button>
+                        <button type="button" class="hero-dash-card__tab" role="tab" aria-selected="false"
+                          aria-controls="heroDashPanel-seo" id="heroDashTab-seo" data-tab-target="seo" tabindex="-1">SEO
+                          &amp; Velocidad</button>
+                        <button type="button" class="hero-dash-card__tab" role="tab" aria-selected="false"
+                          aria-controls="heroDashPanel-auto" id="heroDashTab-auto" data-tab-target="auto"
+                          tabindex="-1">Automatización</button>
                       </div>
-                      <svg class="hero-dash-card__chart" viewBox="0 0 320 64" preserveAspectRatio="none" aria-hidden="true">
-                        <defs>
-                          <linearGradient id="heroDashFade" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stop-color="#f2994a" stop-opacity="0.35" />
-                            <stop offset="100%" stop-color="#f2994a" stop-opacity="0" />
-                          </linearGradient>
-                        </defs>
-                        <path d="M0,50 L40,44 L80,48 L120,30 L160,36 L200,18 L240,24 L280,8 L320,4 L320,64 L0,64 Z"
-                          fill="url(#heroDashFade)" />
-                        <path d="M0,50 L40,44 L80,48 L120,30 L160,36 L200,18 L240,24 L280,8 L320,4"
-                          fill="none" stroke="#f2994a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                      <div class="hero-dash-card__stats">
-                        <div class="hero-dash-card__stat">
-                          <span class="hero-dash-card__stat-arrow">↑</span>
-                          <span>Conversiones</span>
-                        </div>
-                        <div class="hero-dash-card__stat">
-                          <span class="hero-dash-card__stat-arrow">↑</span>
-                          <span>Alcance</span>
-                        </div>
-                        <div class="hero-dash-card__stat">
-                          <span class="hero-dash-card__stat-arrow">↑</span>
-                          <span>ROAS</span>
+
+                      <div class="hero-dash-card__panel" id="heroDashPanel-ads" role="tabpanel"
+                        aria-labelledby="heroDashTab-ads" data-tab-panel="ads">
+                        <svg class="hero-dash-card__chart" viewBox="0 0 320 64" preserveAspectRatio="none" aria-hidden="true">
+                          <defs>
+                            <linearGradient id="heroDashFade-ads" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stop-color="#f2994a" stop-opacity="0.35" />
+                              <stop offset="100%" stop-color="#f2994a" stop-opacity="0" />
+                            </linearGradient>
+                          </defs>
+                          <path d="M0,50 L40,44 L80,48 L120,30 L160,36 L200,18 L240,24 L280,8 L320,4 L320,64 L0,64 Z"
+                            fill="url(#heroDashFade-ads)" />
+                          <path d="M0,50 L40,44 L80,48 L120,30 L160,36 L200,18 L240,24 L280,8 L320,4"
+                            fill="none" stroke="#f2994a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <div class="hero-dash-card__stats">
+                          <div class="hero-dash-card__stat">
+                            <span class="hero-dash-card__stat-arrow">↑</span>
+                            <span>Conversiones</span>
+                          </div>
+                          <div class="hero-dash-card__stat">
+                            <span class="hero-dash-card__stat-arrow">↑</span>
+                            <span>Alcance</span>
+                          </div>
+                          <div class="hero-dash-card__stat">
+                            <span class="hero-dash-card__stat-arrow">↑</span>
+                            <span>ROAS</span>
+                          </div>
                         </div>
                       </div>
+
+                      <div class="hero-dash-card__panel" id="heroDashPanel-seo" role="tabpanel"
+                        aria-labelledby="heroDashTab-seo" data-tab-panel="seo" hidden>
+                        <svg class="hero-dash-card__chart" viewBox="0 0 320 64" preserveAspectRatio="none" aria-hidden="true">
+                          <defs>
+                            <linearGradient id="heroDashFade-seo" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stop-color="#f2994a" stop-opacity="0.35" />
+                              <stop offset="100%" stop-color="#f2994a" stop-opacity="0" />
+                            </linearGradient>
+                          </defs>
+                          <path d="M0,54 L40,52 L80,40 L120,42 L160,26 L200,30 L240,14 L280,16 L320,4 L320,64 L0,64 Z"
+                            fill="url(#heroDashFade-seo)" />
+                          <path d="M0,54 L40,52 L80,40 L120,42 L160,26 L200,30 L240,14 L280,16 L320,4"
+                            fill="none" stroke="#f2994a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <div class="hero-dash-card__stats">
+                          <div class="hero-dash-card__stat">
+                            <span class="hero-dash-card__stat-arrow">↑</span>
+                            <span>Tráfico Orgánico</span>
+                          </div>
+                          <div class="hero-dash-card__stat">
+                            <span class="hero-dash-card__stat-arrow">↑</span>
+                            <span>Velocidad</span>
+                          </div>
+                          <div class="hero-dash-card__stat">
+                            <span class="hero-dash-card__stat-arrow">↑</span>
+                            <span>Posiciones</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="hero-dash-card__panel" id="heroDashPanel-auto" role="tabpanel"
+                        aria-labelledby="heroDashTab-auto" data-tab-panel="auto" hidden>
+                        <svg class="hero-dash-card__chart" viewBox="0 0 320 64" preserveAspectRatio="none" aria-hidden="true">
+                          <defs>
+                            <linearGradient id="heroDashFade-auto" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stop-color="#f2994a" stop-opacity="0.35" />
+                              <stop offset="100%" stop-color="#f2994a" stop-opacity="0" />
+                            </linearGradient>
+                          </defs>
+                          <path d="M0,46 L40,50 L80,34 L120,38 L160,20 L200,24 L240,10 L280,14 L320,6 L320,64 L0,64 Z"
+                            fill="url(#heroDashFade-auto)" />
+                          <path d="M0,46 L40,50 L80,34 L120,38 L160,20 L200,24 L240,10 L280,14 L320,6"
+                            fill="none" stroke="#f2994a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <div class="hero-dash-card__stats">
+                          <div class="hero-dash-card__stat">
+                            <span class="hero-dash-card__stat-arrow">↑</span>
+                            <span>Leads Atendidos</span>
+                          </div>
+                          <div class="hero-dash-card__stat">
+                            <span class="hero-dash-card__stat-arrow">↓</span>
+                            <span>Tiempo Respuesta</span>
+                          </div>
+                          <div class="hero-dash-card__stat">
+                            <span class="hero-dash-card__stat-arrow">↑</span>
+                            <span>Conversión</span>
+                          </div>
+                        </div>
+                      </div>
+
                       <p class="hero-dash-card__note">Panel ilustrativo. Resultados reales varían por cliente.</p>
                     </div>
                   </div>
@@ -2043,6 +2130,38 @@
   <script src="assets/js/gsap-animation.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/contact-form.js"></script>
+  <script>
+    (function () {
+      var card = document.querySelector('.hero-dash-card');
+      if (!card) return;
+      var tabs = Array.prototype.slice.call(card.querySelectorAll('.hero-dash-card__tab'));
+      var panels = Array.prototype.slice.call(card.querySelectorAll('.hero-dash-card__panel'));
+
+      function activate(tab) {
+        tabs.forEach(function (t) {
+          var isActive = t === tab;
+          t.classList.toggle('hero-dash-card__tab--active', isActive);
+          t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          t.tabIndex = isActive ? 0 : -1;
+        });
+        panels.forEach(function (p) {
+          p.hidden = p.getAttribute('data-tab-panel') !== tab.getAttribute('data-tab-target');
+        });
+      }
+
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener('click', function () { activate(tab); });
+        tab.addEventListener('keydown', function (e) {
+          var dir = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+          if (!dir) return;
+          e.preventDefault();
+          var next = tabs[(i + dir + tabs.length) % tabs.length];
+          next.focus();
+          activate(next);
+        });
+      });
+    })();
+  </script>
 </body>
 
 </html>
