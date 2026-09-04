@@ -25,24 +25,24 @@
   <style>
     /* Hero illustrative dashboard card — temporary, no real data */
     .hero-dash-card {
-      max-width: 540px;
+      max-width: 440px;
       width: 100%;
       background-color: rgba(250, 251, 251, 0.06);
       border: 1px solid rgba(250, 251, 251, 0.1);
       -webkit-backdrop-filter: blur(30px);
       backdrop-filter: blur(30px);
-      border-radius: 18px;
-      padding: 34px 38px;
+      border-radius: 16px;
+      padding: 24px 26px;
     }
     .hero-dash-card__head {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 22px;
+      gap: 9px;
+      margin-bottom: 16px;
     }
     .hero-dash-card__dot {
-      width: 11px;
-      height: 11px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
       background: #4ADE80;
       flex: none;
@@ -50,25 +50,25 @@
     }
     @keyframes heroDashPulse {
       0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, .5); }
-      70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+      70% { box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
       100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
     }
     .hero-dash-card__title {
-      font-size: 17px;
+      font-size: 14px;
       font-weight: 600;
       color: var(--tj-color-heading-primary);
       letter-spacing: .01em;
     }
     .hero-dash-card__tabs {
       display: flex;
-      gap: 8px;
-      margin-bottom: 24px;
+      gap: 7px;
+      margin-bottom: 18px;
       flex-wrap: wrap;
     }
     .hero-dash-card__tab {
-      font-size: 14px;
-      padding: 9px 18px;
-      border-radius: 24px;
+      font-size: 12px;
+      padding: 7px 14px;
+      border-radius: 20px;
       background: rgba(250, 251, 251, .05);
       border: 1px solid rgba(250, 251, 251, .1);
       color: var(--tj-color-text-body);
@@ -98,43 +98,43 @@
     .hero-dash-card__chart {
       display: block;
       width: 100%;
-      height: 130px;
-      margin-bottom: 24px;
+      height: 88px;
+      margin-bottom: 16px;
     }
     .hero-dash-card__stats {
       display: flex;
-      gap: 14px;
+      gap: 10px;
     }
     .hero-dash-card__stat {
       flex: 1;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       background: rgba(250, 251, 251, .04);
       border: 1px solid rgba(250, 251, 251, .08);
-      border-radius: 10px;
-      padding: 14px 14px;
+      border-radius: 8px;
+      padding: 10px 10px;
     }
     .hero-dash-card__stat-arrow {
       color: var(--tj-color-theme-primary);
-      font-size: 17px;
+      font-size: 13px;
       line-height: 1;
       flex: none;
     }
     .hero-dash-card__stat span {
-      font-size: 14px;
+      font-size: 11px;
       color: var(--tj-color-text-body);
     }
     .hero-dash-card__note {
-      margin-top: 20px;
-      font-size: 12px;
+      margin-top: 14px;
+      font-size: 10px;
       color: var(--tj-color-text-body-2);
       opacity: .7;
     }
     @media (max-width: 767px) {
-      .banner-img-area .banner-img { min-height: 420px !important; }
-      .hero-dash-card { padding: 26px 24px; }
-      .hero-dash-card__chart { height: 90px; }
+      .banner-img-area .banner-img { min-height: 360px !important; }
+      .hero-dash-card { padding: 20px 20px; }
+      .hero-dash-card__chart { height: 70px; }
     }
   </style>
 </head>
@@ -586,7 +586,7 @@
               <div class="col-xxl-6 col-xl-7 col-lg-6">
                 <div class="banner-img-area">
                   <div class="banner-img tj-fade-anim" data-delay="0.3" data-direction="right"
-                    style="mask-image:none;-webkit-mask-image:none;display:flex;align-items:center;justify-content:center;min-height:560px;max-width:600px;overflow:visible;">
+                    style="mask-image:none;-webkit-mask-image:none;display:flex;align-items:flex-start;justify-content:center;min-height:480px;max-width:480px;overflow:visible;padding-bottom:170px;box-sizing:border-box;">
                     <div class="hero-dash-card" aria-label="Panel ilustrativo de resultados por área">
                       <div class="hero-dash-card__head">
                         <span class="hero-dash-card__dot"></span>
@@ -606,17 +606,17 @@
 
                       <div class="hero-dash-card__panel" id="heroDashPanel-ads" role="tabpanel"
                         aria-labelledby="heroDashTab-ads" data-tab-panel="ads">
-                        <svg class="hero-dash-card__chart" viewBox="0 0 320 130" preserveAspectRatio="none" aria-hidden="true">
+                        <svg class="hero-dash-card__chart" viewBox="0 0 320 88" preserveAspectRatio="none" aria-hidden="true">
                           <defs>
                             <linearGradient id="heroDashFade-ads" x1="0" y1="0" x2="0" y2="1">
                               <stop offset="0%" stop-color="#f2994a" stop-opacity="0.35" />
                               <stop offset="100%" stop-color="#f2994a" stop-opacity="0" />
                             </linearGradient>
                           </defs>
-                          <path d="M0,102 L40,89 L80,97 L120,61 L160,73 L200,37 L240,49 L280,16 L320,8 L320,130 L0,130 Z"
+                          <path d="M0,69 L40,61 L80,66 L120,41 L160,50 L200,25 L240,33 L280,11 L320,6 L320,88 L0,88 Z"
                             fill="url(#heroDashFade-ads)" />
-                          <path d="M0,102 L40,89 L80,97 L120,61 L160,73 L200,37 L240,49 L280,16 L320,8"
-                            fill="none" stroke="#f2994a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M0,69 L40,61 L80,66 L120,41 L160,50 L200,25 L240,33 L280,11 L320,6"
+                            fill="none" stroke="#f2994a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <div class="hero-dash-card__stats">
                           <div class="hero-dash-card__stat">
@@ -636,17 +636,17 @@
 
                       <div class="hero-dash-card__panel" id="heroDashPanel-seo" role="tabpanel"
                         aria-labelledby="heroDashTab-seo" data-tab-panel="seo" hidden>
-                        <svg class="hero-dash-card__chart" viewBox="0 0 320 130" preserveAspectRatio="none" aria-hidden="true">
+                        <svg class="hero-dash-card__chart" viewBox="0 0 320 88" preserveAspectRatio="none" aria-hidden="true">
                           <defs>
                             <linearGradient id="heroDashFade-seo" x1="0" y1="0" x2="0" y2="1">
                               <stop offset="0%" stop-color="#f2994a" stop-opacity="0.35" />
                               <stop offset="100%" stop-color="#f2994a" stop-opacity="0" />
                             </linearGradient>
                           </defs>
-                          <path d="M0,110 L40,106 L80,81 L120,85 L160,53 L200,61 L240,28 L280,32 L320,8 L320,130 L0,130 Z"
+                          <path d="M0,74 L40,72 L80,55 L120,58 L160,36 L200,41 L240,19 L280,22 L320,6 L320,88 L0,88 Z"
                             fill="url(#heroDashFade-seo)" />
-                          <path d="M0,110 L40,106 L80,81 L120,85 L160,53 L200,61 L240,28 L280,32 L320,8"
-                            fill="none" stroke="#f2994a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M0,74 L40,72 L80,55 L120,58 L160,36 L200,41 L240,19 L280,22 L320,6"
+                            fill="none" stroke="#f2994a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <div class="hero-dash-card__stats">
                           <div class="hero-dash-card__stat">
@@ -666,17 +666,17 @@
 
                       <div class="hero-dash-card__panel" id="heroDashPanel-auto" role="tabpanel"
                         aria-labelledby="heroDashTab-auto" data-tab-panel="auto" hidden>
-                        <svg class="hero-dash-card__chart" viewBox="0 0 320 130" preserveAspectRatio="none" aria-hidden="true">
+                        <svg class="hero-dash-card__chart" viewBox="0 0 320 88" preserveAspectRatio="none" aria-hidden="true">
                           <defs>
                             <linearGradient id="heroDashFade-auto" x1="0" y1="0" x2="0" y2="1">
                               <stop offset="0%" stop-color="#f2994a" stop-opacity="0.35" />
                               <stop offset="100%" stop-color="#f2994a" stop-opacity="0" />
                             </linearGradient>
                           </defs>
-                          <path d="M0,93 L40,102 L80,69 L120,77 L160,41 L200,49 L240,20 L280,28 L320,12 L320,130 L0,130 Z"
+                          <path d="M0,63 L40,69 L80,47 L120,52 L160,28 L200,33 L240,14 L280,19 L320,8 L320,88 L0,88 Z"
                             fill="url(#heroDashFade-auto)" />
-                          <path d="M0,93 L40,102 L80,69 L120,77 L160,41 L200,49 L240,20 L280,28 L320,12"
-                            fill="none" stroke="#f2994a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M0,63 L40,69 L80,47 L120,52 L160,28 L200,33 L240,14 L280,19 L320,8"
+                            fill="none" stroke="#f2994a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                         <div class="hero-dash-card__stats">
                           <div class="hero-dash-card__stat">
