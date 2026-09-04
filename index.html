@@ -158,6 +158,17 @@
       font-size: 11px;
       line-height: 1.4;
     }
+    /* Pin the bouncing trust badge to the top edge of the main card instead of
+       floating over its content */
+    .banner-img-area .trusted {
+      top: -18px !important;
+      bottom: auto !important;
+      inset-inline-start: 24px !important;
+      inset-inline-end: auto !important;
+      transform: none !important;
+      max-width: 230px;
+      z-index: 2;
+    }
     @media (max-width: 767px) {
       .banner-img-area .banner-img { min-height: 360px !important; }
       .hero-dash-card { padding: 20px 20px; }
