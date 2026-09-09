@@ -75,14 +75,14 @@ START: Theme Default CSS
   /**
      @Font-Size Declaration
    */
-  --tj-fs-body: 16px;
-  --tj-fs-p: 16px;
-  --tj-fs-h1: 74px;
-  --tj-fs-h2: 48px;
-  --tj-fs-h3: 32px;
-  --tj-fs-h4: 24px;
-  --tj-fs-h5: 20px;
-  --tj-fs-h6: 18px;
+  --tj-fs-body: 14px;
+  --tj-fs-p: 14px;
+  --tj-fs-h1: 64px;
+  --tj-fs-h2: 42px;
+  --tj-fs-h3: 28px;
+  --tj-fs-h4: 21px;
+  --tj-fs-h5: 18px;
+  --tj-fs-h6: 16px;
   /**
      @Color Declaration
    */
@@ -91,7 +91,7 @@ START: Theme Default CSS
   --tj-color-heading-primary: #f6f7f7;
   --tj-color-text-body: #bcbdb9;
   --tj-color-text-body-2: #999996;
-  --tj-color-theme-primary: #f2994a;
+  --tj-color-theme-primary: #E8A44F;
   --tj-color-theme-bg: #191a18;
   --tj-color-theme-dark: #050505;
   --tj-color-theme-dark-2: #494a46;
@@ -151,17 +151,22 @@ h1 {
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   h1 {
-    font-size: 60px;
+    font-size: 52px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   h1 {
-    font-size: 50px;
+    font-size: 44px;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   h1 {
-    font-size: 45px;
+    font-size: 34px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  h1 {
+    font-size: 28px;
   }
 }
 
@@ -171,17 +176,17 @@ h2 {
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
   h2 {
-    font-size: 40px;
+    font-size: 32px;
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   h2 {
-    font-size: 36px;
+    font-size: 26px;
   }
 }
 @media (max-width: 575px) {
   h2 {
-    font-size: 30px;
+    font-size: 22px;
   }
 }
 
@@ -191,12 +196,12 @@ h3 {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   h3 {
-    font-size: 28px;
+    font-size: 22px;
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   h3 {
-    font-size: 25px;
+    font-size: 19px;
   }
 }
 
@@ -206,12 +211,12 @@ h4 {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   h4 {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   h4 {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
@@ -1643,43 +1648,16 @@ START: Theme Header CSS
   padding: 17px 0;
 }
 .site_logo .logo {
-  display: inline-flex;
-  max-width: none;
-  width: auto;
-}
-.logo-lockup {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.logo-lockup .logo-icon-img {
-  width: 34px;
-  height: auto;
-  display: block;
-}
-.logo-lockup .logo-text {
-  font-family: var(--tj-ff-heading);
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--tj-color-heading-primary);
-  line-height: 1;
-  white-space: nowrap;
-}
-.footer-logo .logo-lockup .logo-icon-img {
-  width: 40px;
-}
-.footer-logo .logo-lockup .logo-text {
-  font-size: 26px;
-}
-.hamburger_logo .mobile_logo,
-.hamburger_logo .mobile_logo .logo-lockup {
-  display: inline-flex;
-  max-width: none;
-  width: auto;
+  display: inline-block;
+  max-width: 52px;
+  width: 100%;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .site_logo {
     padding: 15px 0;
+  }
+  .site_logo .logo {
+    max-width: 56px;
   }
 }
 
@@ -2066,8 +2044,8 @@ START: Theme Footer CSS
 }
 
 .footer-logo {
-  max-width: none;
-  width: auto;
+  max-width: 52px;
+  width: 100%;
 }
 
 .download-buttons {
@@ -3297,9 +3275,9 @@ START: Theme Footer CSS
 }
 
 .hamburger_logo .mobile_logo {
-  display: inline-flex;
-  max-width: none;
-  width: auto;
+  display: inline-block;
+  max-width: 48px;
+  width: 100%;
 }
 
 .menu-bar button {
@@ -3887,22 +3865,6 @@ START: Hero CSS
 }
 .banner-content .banner-title {
   margin-bottom: 0;
-  font-size: 48px;
-}
-@media only screen and (min-width: 1200px) and (max-width: 1399px) {
-  .banner-content .banner-title {
-    font-size: 42px;
-  }
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .banner-content .banner-title {
-    font-size: 36px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
-  .banner-content .banner-title {
-    font-size: 32px;
-  }
 }
 .banner-content .btn-area {
   display: -webkit-box;
@@ -6070,16 +6032,6 @@ START: Services CSS
   bottom: -12px;
   right: 0;
 }
-.service-stage {
-  display: inline-block;
-  font-family: var(--tj-ff-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--tj-color-theme-primary);
-  margin-bottom: 10px;
-}
 .service-item .title {
   margin-bottom: 18px;
 }
@@ -7433,6 +7385,7 @@ START: Technologies CSS
   }
 }
 .tech-content .title {
+  font-size: 13px;
   margin-top: 8px;
   margin-bottom: 18px;
 }
@@ -7443,6 +7396,7 @@ START: Technologies CSS
   }
 }
 .tech-content .desc {
+  font-size: 12px;
   margin-bottom: 0;
 }
 
@@ -9040,7 +8994,7 @@ START: Blog CSS
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-color: rgba(211, 237, 49, 0.1);
+  background-color: rgba(232, 164, 79, 0.1);
   -webkit-animation: pulse2 2s linear infinite;
           animation: pulse2 2s linear infinite;
   z-index: -1;
@@ -10243,8 +10197,8 @@ START: Working process CSS
           mask-size: auto;
   -webkit-mask-position: center center;
           mask-position: center center;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(211, 237, 49, 0)), color-stop(50%, var(--tj-color-theme-primary)), to(rgba(211, 237, 49, 0)));
-  background: linear-gradient(90deg, rgba(211, 237, 49, 0) 0%, var(--tj-color-theme-primary) 50%, rgba(211, 237, 49, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(232, 164, 79, 0)), color-stop(50%, var(--tj-color-theme-primary)), to(rgba(232, 164, 79, 0)));
+  background: linear-gradient(90deg, rgba(232, 164, 79, 0) 0%, var(--tj-color-theme-primary) 50%, rgba(232, 164, 79, 0) 100%);
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .process-border {
@@ -12494,7 +12448,7 @@ START: Blog Details CSS
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-color: rgba(211, 237, 49, 0.1);
+  background-color: rgba(232, 164, 79, 0.1);
   -webkit-animation: pulse2 2s linear infinite;
           animation: pulse2 2s linear infinite;
   z-index: -1;
@@ -12627,7 +12581,7 @@ START: Blog Details CSS
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-color: rgba(211, 237, 49, 0.1);
+  background-color: rgba(232, 164, 79, 0.1);
   -webkit-animation: pulse2 2s linear infinite;
           animation: pulse2 2s linear infinite;
   z-index: -1;
@@ -14138,8 +14092,8 @@ START: Animate CSS
 }
 @-webkit-keyframes pulse2 {
   0% {
-    -webkit-box-shadow: 0 0 0 0 rgb(211, 237, 49);
-            box-shadow: 0 0 0 0 rgb(211, 237, 49);
+    -webkit-box-shadow: 0 0 0 0 rgb(232, 164, 79);
+            box-shadow: 0 0 0 0 rgb(232, 164, 79);
   }
   100% {
     -webkit-box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
@@ -14148,8 +14102,8 @@ START: Animate CSS
 }
 @keyframes pulse2 {
   0% {
-    -webkit-box-shadow: 0 0 0 0 rgb(211, 237, 49);
-            box-shadow: 0 0 0 0 rgb(211, 237, 49);
+    -webkit-box-shadow: 0 0 0 0 rgb(232, 164, 79);
+            box-shadow: 0 0 0 0 rgb(232, 164, 79);
   }
   100% {
     -webkit-box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
@@ -14178,22 +14132,22 @@ START: Animate CSS
 }
 @-webkit-keyframes pulsePrimary {
   0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(211, 237, 49, 0.5);
-            box-shadow: 0 0 0 0 rgba(211, 237, 49, 0.5);
+    -webkit-box-shadow: 0 0 0 0 rgba(232, 164, 79, 0.5);
+            box-shadow: 0 0 0 0 rgba(232, 164, 79, 0.5);
   }
   100% {
-    -webkit-box-shadow: 0 0 0 16px rgba(211, 237, 49, 0);
-            box-shadow: 0 0 0 16px rgba(211, 237, 49, 0);
+    -webkit-box-shadow: 0 0 0 16px rgba(232, 164, 79, 0);
+            box-shadow: 0 0 0 16px rgba(232, 164, 79, 0);
   }
 }
 @keyframes pulsePrimary {
   0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(211, 237, 49, 0.5);
-            box-shadow: 0 0 0 0 rgba(211, 237, 49, 0.5);
+    -webkit-box-shadow: 0 0 0 0 rgba(232, 164, 79, 0.5);
+            box-shadow: 0 0 0 0 rgba(232, 164, 79, 0.5);
   }
   100% {
-    -webkit-box-shadow: 0 0 0 16px rgba(211, 237, 49, 0);
-            box-shadow: 0 0 0 16px rgba(211, 237, 49, 0);
+    -webkit-box-shadow: 0 0 0 16px rgba(232, 164, 79, 0);
+            box-shadow: 0 0 0 16px rgba(232, 164, 79, 0);
   }
 }
 @-webkit-keyframes jumping {
