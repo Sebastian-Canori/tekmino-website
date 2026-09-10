@@ -11,6 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Cache-bust CSS/JS asset links
+        run: |
+          SHA_SHORT=$(git rev-parse --short HEAD)
+          find . -maxdepth 1 -name "*.html" -print0 | xargs -0 sed -i \
+            -E "s#(href=\"assets/css/[^\"]+\.css)\"#\1?v=${SHA_SHORT}\"#g; s#(src=\"assets/js/[^\"]+\.js)\"#\1?v=${SHA_SHORT}\"#g"
+
       - name: Deploy over SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
