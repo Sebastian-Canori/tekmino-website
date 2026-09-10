@@ -25,14 +25,14 @@
   <style>
     /* Hero illustrative dashboard card — temporary, no real data */
     .hero-dash-card {
-      max-width: 440px;
+      max-width: 500px;
       width: 100%;
       background-color: rgba(250, 251, 251, 0.06);
       border: 1px solid rgba(250, 251, 251, 0.1);
       -webkit-backdrop-filter: blur(30px);
       backdrop-filter: blur(30px);
-      border-radius: 16px;
-      padding: 24px 26px;
+      border-radius: 18px;
+      padding: 30px 32px;
     }
     .hero-dash-card__head {
       display: flex;
@@ -98,8 +98,8 @@
     .hero-dash-card__chart {
       display: block;
       width: 100%;
-      height: 88px;
-      margin-bottom: 16px;
+      height: 104px;
+      margin-bottom: 18px;
     }
     .hero-dash-card__stats {
       display: flex;
@@ -128,7 +128,7 @@
       flex: none;
     }
     .hero-dash-card__stat-value {
-      font-size: 16px;
+      font-size: 19px;
       font-weight: 700;
       color: var(--tj-color-heading-primary);
       font-variant-numeric: tabular-nums;
@@ -171,12 +171,12 @@
       font-size: 11px;
       line-height: 1.4;
     }
-    /* Float the trust badge above the tabs row (Ads / SEO & Velocidad /
-       Automatización) instead of the card's top-left corner */
+    /* Float the trust badge below the card, mirroring the reviews widget
+       on the opposite (bottom-right) corner */
     .banner-img-area .trusted {
-      top: -58px !important;
-      bottom: auto !important;
-      inset-inline-start: 130px !important;
+      top: auto !important;
+      bottom: -22px !important;
+      inset-inline-start: -10px !important;
       inset-inline-end: auto !important;
       transform: translateY(0);
       max-width: 220px;
@@ -555,7 +555,7 @@
               <div class="col-xxl-6 col-xl-7 col-lg-6">
                 <div class="banner-img-area">
                   <div class="banner-img tj-fade-anim" data-delay="0.3" data-direction="right"
-                    style="mask-image:none;-webkit-mask-image:none;display:flex;align-items:flex-start;justify-content:center;min-height:480px;max-width:480px;overflow:visible;padding-bottom:170px;box-sizing:border-box;">
+                    style="mask-image:none;-webkit-mask-image:none;display:flex;align-items:flex-start;justify-content:center;min-height:520px;max-width:540px;overflow:visible;padding-bottom:150px;box-sizing:border-box;">
                     <div class="hero-dash-card" aria-label="Panel ilustrativo de resultados por área">
                       <div class="hero-dash-card__head">
                         <span class="hero-dash-card__dot"></span>
