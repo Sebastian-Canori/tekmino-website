@@ -3864,6 +3864,10 @@ START: Hero CSS
   font-size: 16px;
 }
 .banner-content .banner-title {
+  margin-bottom: 22px;
+}
+.banner-content .desc {
+  max-width: 480px;
   margin-bottom: 0;
 }
 .banner-content .btn-area {
