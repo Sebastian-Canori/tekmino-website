@@ -581,11 +581,16 @@
                               <stop offset="0%" stop-color="#f2994a" stop-opacity="0.35" />
                               <stop offset="100%" stop-color="#f2994a" stop-opacity="0" />
                             </linearGradient>
+                            <clipPath id="heroDashClip-ads">
+                              <rect class="hero-dash-card__chart-clip-rect" x="0" y="0" width="0" height="88" />
+                            </clipPath>
                           </defs>
-                          <path d="M0,69 L40,61 L80,66 L120,41 L160,50 L200,25 L240,33 L280,11 L320,6 L320,88 L0,88 Z"
-                            fill="url(#heroDashFade-ads)" />
-                          <path d="M0,69 L40,61 L80,66 L120,41 L160,50 L200,25 L240,33 L280,11 L320,6"
-                            fill="none" stroke="#f2994a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                          <g clip-path="url(#heroDashClip-ads)">
+                            <path d="M0,69 L40,61 L80,66 L120,41 L160,50 L200,25 L240,33 L280,11 L320,6 L320,88 L0,88 Z"
+                              fill="url(#heroDashFade-ads)" />
+                            <path class="hero-dash-card__chart-line" d="M0,69 L40,61 L80,66 L120,41 L160,50 L200,25 L240,33 L280,11 L320,6"
+                              fill="none" stroke="#f2994a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                          </g>
                         </svg>
                         <div class="hero-dash-card__stats">
                           <div class="hero-dash-card__stat">
@@ -620,11 +625,16 @@
                               <stop offset="0%" stop-color="#f2994a" stop-opacity="0.35" />
                               <stop offset="100%" stop-color="#f2994a" stop-opacity="0" />
                             </linearGradient>
+                            <clipPath id="heroDashClip-seo">
+                              <rect class="hero-dash-card__chart-clip-rect" x="0" y="0" width="0" height="88" />
+                            </clipPath>
                           </defs>
-                          <path d="M0,74 L40,72 L80,55 L120,58 L160,36 L200,41 L240,19 L280,22 L320,6 L320,88 L0,88 Z"
-                            fill="url(#heroDashFade-seo)" />
-                          <path d="M0,74 L40,72 L80,55 L120,58 L160,36 L200,41 L240,19 L280,22 L320,6"
-                            fill="none" stroke="#f2994a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                          <g clip-path="url(#heroDashClip-seo)">
+                            <path d="M0,74 L40,72 L80,55 L120,58 L160,36 L200,41 L240,19 L280,22 L320,6 L320,88 L0,88 Z"
+                              fill="url(#heroDashFade-seo)" />
+                            <path class="hero-dash-card__chart-line" d="M0,74 L40,72 L80,55 L120,58 L160,36 L200,41 L240,19 L280,22 L320,6"
+                              fill="none" stroke="#f2994a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                          </g>
                         </svg>
                         <div class="hero-dash-card__stats">
                           <div class="hero-dash-card__stat">
@@ -659,11 +669,16 @@
                               <stop offset="0%" stop-color="#f2994a" stop-opacity="0.35" />
                               <stop offset="100%" stop-color="#f2994a" stop-opacity="0" />
                             </linearGradient>
+                            <clipPath id="heroDashClip-auto">
+                              <rect class="hero-dash-card__chart-clip-rect" x="0" y="0" width="0" height="88" />
+                            </clipPath>
                           </defs>
-                          <path d="M0,63 L40,69 L80,47 L120,52 L160,28 L200,33 L240,14 L280,19 L320,8 L320,88 L0,88 Z"
-                            fill="url(#heroDashFade-auto)" />
-                          <path d="M0,63 L40,69 L80,47 L120,52 L160,28 L200,33 L240,14 L280,19 L320,8"
-                            fill="none" stroke="#f2994a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                          <g clip-path="url(#heroDashClip-auto)">
+                            <path d="M0,63 L40,69 L80,47 L120,52 L160,28 L200,33 L240,14 L280,19 L320,8 L320,88 L0,88 Z"
+                              fill="url(#heroDashFade-auto)" />
+                            <path class="hero-dash-card__chart-line" d="M0,63 L40,69 L80,47 L120,52 L160,28 L200,33 L240,14 L280,19 L320,8"
+                              fill="none" stroke="#f2994a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                          </g>
                         </svg>
                         <div class="hero-dash-card__stats">
                           <div class="hero-dash-card__stat">
@@ -2215,6 +2230,25 @@
         });
       }
 
+      function animateChart(panel) {
+        var clipRect = panel.querySelector('.hero-dash-card__chart-clip-rect');
+        if (!clipRect) return;
+        var fullWidth = 320;
+        clipRect.setAttribute('width', reduceMotion ? fullWidth : 0);
+        if (reduceMotion) return;
+        var duration = 900;
+        var start = null;
+        function step(ts) {
+          if (start === null) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          clipRect.setAttribute('width', fullWidth * eased);
+          if (progress < 1) requestAnimationFrame(step);
+          else clipRect.setAttribute('width', fullWidth);
+        }
+        requestAnimationFrame(step);
+      }
+
       function activate(tab) {
         tabs.forEach(function (t) {
           var isActive = t === tab;
@@ -2227,7 +2261,10 @@
           p.hidden = p.getAttribute('data-tab-panel') !== target;
         });
         var shown = panels.filter(function (p) { return p.getAttribute('data-tab-panel') === target; })[0];
-        if (shown) animateStats(shown);
+        if (shown) {
+          animateStats(shown);
+          animateChart(shown);
+        }
       }
 
       tabs.forEach(function (tab, i) {
@@ -2243,7 +2280,10 @@
       });
 
       var initialPanel = panels.filter(function (p) { return !p.hidden; })[0];
-      if (initialPanel) animateStats(initialPanel);
+      if (initialPanel) {
+        animateStats(initialPanel);
+        animateChart(initialPanel);
+      }
     })();
   </script>
 </body>
