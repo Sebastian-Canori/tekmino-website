@@ -2280,9 +2280,37 @@
       });
 
       var initialPanel = panels.filter(function (p) { return !p.hidden; })[0];
-      if (initialPanel) {
-        animateStats(initialPanel);
-        animateChart(initialPanel);
+      function runInitialAnimation() {
+        if (initialPanel) {
+          animateStats(initialPanel);
+          animateChart(initialPanel);
+        }
+      }
+
+      // Wait until the preloader has fully hidden the page before running the
+      // first-view animation, otherwise it finishes while still covered up.
+      var preloader = document.querySelector('.preloader');
+      if (preloader && !reduceMotion) {
+        var started = false;
+        function startWhenLoaded() {
+          if (started) return;
+          started = true;
+          setTimeout(runInitialAnimation, 1650);
+        }
+        if (preloader.classList.contains('is-loaded')) {
+          startWhenLoaded();
+        } else {
+          new MutationObserver(function (mutations, observer) {
+            if (preloader.classList.contains('is-loaded')) {
+              observer.disconnect();
+              startWhenLoaded();
+            }
+          }).observe(preloader, { attributes: true, attributeFilter: ['class'] });
+          // Fallback in case the preloader never resolves.
+          window.addEventListener('load', function () { setTimeout(startWhenLoaded, 2000); });
+        }
+      } else {
+        runInitialAnimation();
       }
     })();
   </script>
