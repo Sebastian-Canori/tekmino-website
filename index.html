@@ -2287,27 +2287,29 @@
         }
       }
 
-      // Wait until the preloader has fully hidden the page before running the
-      // first-view animation, otherwise it finishes while still covered up.
+      // Start the first-view animation the instant the preloader begins
+      // fading out (main.js adds "is-loaded" right before it calls
+      // fadeOut), so the count-up/draw plays as the card is revealed
+      // instead of finishing underneath the still-visible preloader.
       var preloader = document.querySelector('.preloader');
       if (preloader && !reduceMotion) {
         var started = false;
-        function startWhenLoaded() {
+        function trigger() {
           if (started) return;
           started = true;
-          setTimeout(runInitialAnimation, 1650);
+          runInitialAnimation();
         }
         if (preloader.classList.contains('is-loaded')) {
-          startWhenLoaded();
+          trigger();
         } else {
           new MutationObserver(function (mutations, observer) {
             if (preloader.classList.contains('is-loaded')) {
               observer.disconnect();
-              startWhenLoaded();
+              trigger();
             }
           }).observe(preloader, { attributes: true, attributeFilter: ['class'] });
-          // Fallback in case the preloader never resolves.
-          window.addEventListener('load', function () { setTimeout(startWhenLoaded, 2000); });
+          // Fallback in case the preloader script never runs (e.g. blocked).
+          window.addEventListener('load', function () { setTimeout(trigger, 1700); });
         }
       } else {
         runInitialAnimation();
