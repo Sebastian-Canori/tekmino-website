@@ -108,20 +108,33 @@
     .hero-dash-card__stat {
       flex: 1;
       display: flex;
-      align-items: center;
-      gap: 6px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
       background: rgba(250, 251, 251, .04);
       border: 1px solid rgba(250, 251, 251, .08);
       border-radius: 8px;
       padding: 10px 10px;
     }
+    .hero-dash-card__stat-value-row {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
     .hero-dash-card__stat-arrow {
       color: var(--tj-color-theme-primary);
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1;
       flex: none;
     }
-    .hero-dash-card__stat span {
+    .hero-dash-card__stat-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--tj-color-heading-primary);
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+    .hero-dash-card__stat-label {
       font-size: 11px;
       color: var(--tj-color-text-body);
     }
@@ -158,12 +171,12 @@
       font-size: 11px;
       line-height: 1.4;
     }
-    /* Pin the bouncing trust badge to the top edge of the main card instead of
-       floating over its content */
+    /* Float the trust badge above the tabs row (Ads / SEO & Velocidad /
+       Automatización) instead of the card's top-left corner */
     .banner-img-area .trusted {
-      top: -66px !important;
+      top: -58px !important;
       bottom: auto !important;
-      inset-inline-start: 24px !important;
+      inset-inline-start: 130px !important;
       inset-inline-end: auto !important;
       transform: translateY(0);
       max-width: 220px;
@@ -576,16 +589,25 @@
                         </svg>
                         <div class="hero-dash-card__stats">
                           <div class="hero-dash-card__stat">
-                            <span class="hero-dash-card__stat-arrow">↑</span>
-                            <span>Conversiones</span>
+                            <div class="hero-dash-card__stat-value-row">
+                              <span class="hero-dash-card__stat-arrow">↑</span>
+                              <span class="hero-dash-card__stat-value" data-count-to="34" data-suffix="%">0%</span>
+                            </div>
+                            <span class="hero-dash-card__stat-label">Conversiones</span>
                           </div>
                           <div class="hero-dash-card__stat">
-                            <span class="hero-dash-card__stat-arrow">↑</span>
-                            <span>Alcance</span>
+                            <div class="hero-dash-card__stat-value-row">
+                              <span class="hero-dash-card__stat-arrow">↑</span>
+                              <span class="hero-dash-card__stat-value" data-count-to="58" data-suffix="%">0%</span>
+                            </div>
+                            <span class="hero-dash-card__stat-label">Alcance</span>
                           </div>
                           <div class="hero-dash-card__stat">
-                            <span class="hero-dash-card__stat-arrow">↑</span>
-                            <span>ROAS</span>
+                            <div class="hero-dash-card__stat-value-row">
+                              <span class="hero-dash-card__stat-arrow">↑</span>
+                              <span class="hero-dash-card__stat-value" data-count-to="4.2" data-decimals="1" data-suffix="x">0.0x</span>
+                            </div>
+                            <span class="hero-dash-card__stat-label">ROAS</span>
                           </div>
                         </div>
                       </div>
@@ -606,16 +628,25 @@
                         </svg>
                         <div class="hero-dash-card__stats">
                           <div class="hero-dash-card__stat">
-                            <span class="hero-dash-card__stat-arrow">↑</span>
-                            <span>Tráfico Orgánico</span>
+                            <div class="hero-dash-card__stat-value-row">
+                              <span class="hero-dash-card__stat-arrow">↑</span>
+                              <span class="hero-dash-card__stat-value" data-count-to="41" data-suffix="%">0%</span>
+                            </div>
+                            <span class="hero-dash-card__stat-label">Tráfico Orgánico</span>
                           </div>
                           <div class="hero-dash-card__stat">
-                            <span class="hero-dash-card__stat-arrow">↑</span>
-                            <span>Velocidad</span>
+                            <div class="hero-dash-card__stat-value-row">
+                              <span class="hero-dash-card__stat-arrow">↑</span>
+                              <span class="hero-dash-card__stat-value" data-count-to="92" data-suffix="/100">0/100</span>
+                            </div>
+                            <span class="hero-dash-card__stat-label">Velocidad</span>
                           </div>
                           <div class="hero-dash-card__stat">
-                            <span class="hero-dash-card__stat-arrow">↑</span>
-                            <span>Posiciones</span>
+                            <div class="hero-dash-card__stat-value-row">
+                              <span class="hero-dash-card__stat-arrow">↑</span>
+                              <span class="hero-dash-card__stat-value" data-count-to="15" data-prefix="+">+0</span>
+                            </div>
+                            <span class="hero-dash-card__stat-label">Posiciones</span>
                           </div>
                         </div>
                       </div>
@@ -636,16 +667,25 @@
                         </svg>
                         <div class="hero-dash-card__stats">
                           <div class="hero-dash-card__stat">
-                            <span class="hero-dash-card__stat-arrow">↑</span>
-                            <span>Leads Atendidos</span>
+                            <div class="hero-dash-card__stat-value-row">
+                              <span class="hero-dash-card__stat-arrow">↑</span>
+                              <span class="hero-dash-card__stat-value" data-count-to="120" data-prefix="+">+0</span>
+                            </div>
+                            <span class="hero-dash-card__stat-label">Leads Atendidos</span>
                           </div>
                           <div class="hero-dash-card__stat">
-                            <span class="hero-dash-card__stat-arrow">↓</span>
-                            <span>Tiempo Respuesta</span>
+                            <div class="hero-dash-card__stat-value-row">
+                              <span class="hero-dash-card__stat-arrow">↓</span>
+                              <span class="hero-dash-card__stat-value" data-count-to="85" data-prefix="-" data-suffix="%">-0%</span>
+                            </div>
+                            <span class="hero-dash-card__stat-label">Tiempo Respuesta</span>
                           </div>
                           <div class="hero-dash-card__stat">
-                            <span class="hero-dash-card__stat-arrow">↑</span>
-                            <span>Conversión</span>
+                            <div class="hero-dash-card__stat-value-row">
+                              <span class="hero-dash-card__stat-arrow">↑</span>
+                              <span class="hero-dash-card__stat-value" data-count-to="27" data-prefix="+" data-suffix="%">+0%</span>
+                            </div>
+                            <span class="hero-dash-card__stat-label">Conversión</span>
                           </div>
                         </div>
                       </div>
@@ -2150,6 +2190,30 @@
       if (!card) return;
       var tabs = Array.prototype.slice.call(card.querySelectorAll('.hero-dash-card__tab'));
       var panels = Array.prototype.slice.call(card.querySelectorAll('.hero-dash-card__panel'));
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function animateStats(panel) {
+        var values = panel.querySelectorAll('.hero-dash-card__stat-value');
+        Array.prototype.forEach.call(values, function (el) {
+          var target = parseFloat(el.getAttribute('data-count-to'));
+          var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+          var prefix = el.getAttribute('data-prefix') || '';
+          var suffix = el.getAttribute('data-suffix') || '';
+          function format(n) { return prefix + n.toFixed(decimals) + suffix; }
+          if (reduceMotion) { el.textContent = format(target); return; }
+          var duration = 900;
+          var start = null;
+          function step(ts) {
+            if (start === null) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = format(target * eased);
+            if (progress < 1) requestAnimationFrame(step);
+            else el.textContent = format(target);
+          }
+          requestAnimationFrame(step);
+        });
+      }
 
       function activate(tab) {
         tabs.forEach(function (t) {
@@ -2158,9 +2222,12 @@
           t.setAttribute('aria-selected', isActive ? 'true' : 'false');
           t.tabIndex = isActive ? 0 : -1;
         });
+        var target = tab.getAttribute('data-tab-target');
         panels.forEach(function (p) {
-          p.hidden = p.getAttribute('data-tab-panel') !== tab.getAttribute('data-tab-target');
+          p.hidden = p.getAttribute('data-tab-panel') !== target;
         });
+        var shown = panels.filter(function (p) { return p.getAttribute('data-tab-panel') === target; })[0];
+        if (shown) animateStats(shown);
       }
 
       tabs.forEach(function (tab, i) {
@@ -2174,6 +2241,9 @@
           activate(next);
         });
       });
+
+      var initialPanel = panels.filter(function (p) { return !p.hidden; })[0];
+      if (initialPanel) animateStats(initialPanel);
     })();
   </script>
 </body>
