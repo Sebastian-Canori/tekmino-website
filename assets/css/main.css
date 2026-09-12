@@ -5648,6 +5648,24 @@ START: About CSS
   height: 70px;
   margin-bottom: 10px;
 }
+.tj-about-section-2 .about-logo.about-logo-under-image {
+  width: 100%;
+  margin-top: 24px;
+  padding: 24px 29px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 18px;
+}
+.tj-about-section-2 .about-logo.about-logo-under-image .about-logo-icon {
+  margin-bottom: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.tj-about-section-2 .about-logo.about-logo-under-image .about-logo-wordmark {
+  text-align: left;
+}
 .about-logo-wordmark {
   display: block;
   font-family: var(--tj-ff-heading);
