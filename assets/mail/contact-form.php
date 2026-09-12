@@ -9,8 +9,8 @@ $recipient = 'your-email@yourdomain.com';
 $subjects = [
   '1' => 'Desarrollo Web',
   '2' => 'Tiendas Online',
-  '3' => 'SEO Técnico',
-  '4' => 'Campañas de Ads',
+  '3' => 'SEO & Visibilidad',
+  '4' => 'Publicidad de Performance',
   '5' => 'Automatización de Leads',
   '6' => 'Cierre de Ventas Automatizado',
 ];
