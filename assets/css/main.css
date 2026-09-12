@@ -5645,6 +5645,15 @@ START: About CSS
   height: 70px;
   margin-bottom: 10px;
 }
+.about-logo-wordmark {
+  display: block;
+  font-family: var(--tj-ff-heading);
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--tj-color-theme-dark);
+  text-align: center;
+}
 .tj-about-section-2 .about-features {
   display: -webkit-box;
   display: -ms-flexbox;
