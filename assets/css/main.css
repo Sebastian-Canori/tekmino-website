@@ -5524,6 +5524,14 @@ START: About CSS
           padding-inline-end: 20px;
   background-color: var(--tj-color-theme-dark);
   border-end-end-radius: 16px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .tj-about-section-2 .about-left::before, .tj-about-section-2 .about-left::after {
   content: "";
@@ -5557,9 +5565,22 @@ START: About CSS
   -webkit-mask-image: none;
           mask-image: none;
   overflow: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  min-height: 0;
+}
+.tj-about-section-2 .about-img .img-reveal-1 {
+  height: 100%;
 }
 .tj-about-section-2 .about-img img {
   border-radius: 16px;
+  width: 100%;
+  height: 100%;
+}
+.tj-about-section-2 .about-logo.about-logo-under-image {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .tj-about-section-2 .about-img img {
