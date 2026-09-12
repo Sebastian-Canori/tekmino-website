@@ -5650,7 +5650,9 @@ START: About CSS
 }
 .tj-about-section-2 .about-logo.about-logo-under-image {
   width: 100%;
-  margin-top: 24px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 30px;
   padding: 24px 29px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
