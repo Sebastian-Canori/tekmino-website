@@ -5596,9 +5596,9 @@ START: About CSS
   display: -ms-flexbox;
   display: flex;
   gap: 30px;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   margin-top: 45px;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
@@ -5634,6 +5634,9 @@ START: About CSS
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), (max-width: 575px) {
   .tj-about-section-2 .about-logo {
