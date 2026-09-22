@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="assets/css/venobox.min.css?v=6">
   <link rel="stylesheet" href="assets/css/meanmenu.css?v=6">
   <link rel="stylesheet" href="assets/css/main.css?v=10">
-  <link rel="stylesheet" href="assets/css/case-study.css?v=1">
+  <link rel="stylesheet" href="assets/css/case-study.css?v=2">
 </head>
 
 <body>
@@ -450,10 +450,10 @@
                 <hr class="cs-rule">
               </div>
               <div class="cs-icon-grid">
-                <div class="cs-icon-card"><i class="tji-subtitle"></i><span>Jerarquía Visual</span></div>
-                <div class="cs-icon-card"><i class="tji-location-2"></i><span>Mapas y Datos</span></div>
-                <div class="cs-icon-card"><i class="tji-window"></i><span>Componentes Reutilizables</span></div>
-                <div class="cs-icon-card"><i class="tji-hand"></i><span>CTAs Estratégicos</span></div>
+                <div class="cs-node"><i class="tji-subtitle"></i><span>Jerarquía Visual</span></div>
+                <div class="cs-node"><i class="tji-location-2"></i><span>Mapas y Datos</span></div>
+                <div class="cs-node"><i class="tji-window"></i><span>Componentes Reutilizables</span></div>
+                <div class="cs-node"><i class="tji-hand"></i><span>CTAs Estratégicos</span></div>
               </div>
             </div>
           </section>
@@ -467,13 +467,14 @@
                 <p>Un sitio escalable y autogestionable: Webflow CMS como base para que Marker amplíe el contenido sin construir cada página a mano.</p>
                 <hr class="cs-rule">
               </div>
-              <div class="cs-diagram">
-                <span class="cs-chip is-accent"><i class="tji-development"></i>Webflow CMS</span>
-                <span class="cs-diagram-arrow"><i class="tji-arrow-right-3"></i></span>
-                <div class="cs-diagram-group">
-                  <span class="cs-chip"><i class="tji-subtitle-2"></i>Blog</span>
-                  <span class="cs-chip"><i class="tji-award"></i>Casos de Éxito</span>
-                  <span class="cs-chip"><i class="tji-cloud"></i>Recursos</span>
+              <div class="cs-tree">
+                <div class="cs-tree-root">
+                  <div class="cs-node is-accent"><i class="tji-development"></i><span>Webflow CMS</span></div>
+                </div>
+                <div class="cs-tree-row">
+                  <div class="cs-tree-item"><div class="cs-node"><i class="tji-subtitle-2"></i><span>Blog</span></div></div>
+                  <div class="cs-tree-item"><div class="cs-node"><i class="tji-award"></i><span>Casos de Éxito</span></div></div>
+                  <div class="cs-tree-item"><div class="cs-node"><i class="tji-cloud"></i><span>Recursos</span></div></div>
                 </div>
               </div>
             </div>
@@ -488,20 +489,25 @@
                 <p>Una estructura pensada para posicionar cada solución por separado y captar tráfico calificado, en vez de concentrar todo en una única página genérica.</p>
                 <hr class="cs-rule">
               </div>
-              <div class="cs-diagram">
-                <span class="cs-chip"><i class="tji-home"></i>Home</span>
-                <span class="cs-diagram-arrow"><i class="tji-arrow-right-3"></i></span>
-                <div class="cs-diagram-group">
-                  <span class="cs-chip is-accent"><i class="tji-network"></i>Soluciones</span>
-                  <span class="cs-chip"><i class="tji-subtitle-2"></i>Blog</span>
-                  <span class="cs-chip"><i class="tji-award"></i>Casos de Éxito</span>
-                  <span class="cs-chip"><i class="tji-cloud"></i>Recursos</span>
+              <div class="cs-tree">
+                <div class="cs-tree-root">
+                  <div class="cs-node"><i class="tji-home"></i><span>Home</span></div>
                 </div>
-                <div class="cs-diagram-branch">
-                  <span class="cs-chip"><i class="tji-signal"></i>Routing</span>
-                  <span class="cs-chip"><i class="tji-calendar"></i>Tour Planning</span>
-                  <span class="cs-chip"><i class="tji-location-2"></i>Geocoding</span>
-                  <span class="cs-chip"><i class="tji-location"></i>Positioning</span>
+                <div class="cs-tree-row">
+                  <div class="cs-tree-item">
+                    <div class="cs-node is-accent"><i class="tji-network"></i><span>Soluciones</span></div>
+                    <div class="cs-tree-branch">
+                      <div class="cs-tree-row">
+                        <div class="cs-tree-item"><div class="cs-node cs-node-sm"><i class="tji-signal"></i><span>Routing</span></div></div>
+                        <div class="cs-tree-item"><div class="cs-node cs-node-sm"><i class="tji-calendar"></i><span>Tour Planning</span></div></div>
+                        <div class="cs-tree-item"><div class="cs-node cs-node-sm"><i class="tji-location-2"></i><span>Geocoding</span></div></div>
+                        <div class="cs-tree-item"><div class="cs-node cs-node-sm"><i class="tji-location"></i><span>Positioning</span></div></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cs-tree-item"><div class="cs-node"><i class="tji-subtitle-2"></i><span>Blog</span></div></div>
+                  <div class="cs-tree-item"><div class="cs-node"><i class="tji-award"></i><span>Casos de Éxito</span></div></div>
+                  <div class="cs-tree-item"><div class="cs-node"><i class="tji-cloud"></i><span>Recursos</span></div></div>
                 </div>
               </div>
             </div>
@@ -516,18 +522,18 @@
                 <p>Acompañamos cada etapa del recorrido del usuario, desde el interés inicial hasta el contacto comercial.</p>
                 <hr class="cs-rule">
               </div>
-              <div class="cs-diagram">
-                <span class="cs-chip"><i class="tji-home"></i>Home</span>
-                <span class="cs-diagram-arrow"><i class="tji-arrow-right-3"></i></span>
-                <span class="cs-chip"><i class="tji-subtitle-2"></i>Blog</span>
-                <span class="cs-diagram-arrow"><i class="tji-arrow-right-3"></i></span>
-                <span class="cs-chip"><i class="tji-network"></i>Soluciones</span>
-                <span class="cs-diagram-arrow"><i class="tji-arrow-right-3"></i></span>
-                <span class="cs-chip"><i class="tji-award"></i>Casos de Éxito</span>
-                <span class="cs-diagram-arrow"><i class="tji-arrow-right-3"></i></span>
-                <span class="cs-chip"><i class="tji-cloud"></i>Materiales y Webinars</span>
-                <span class="cs-diagram-arrow"><i class="tji-arrow-right-3"></i></span>
-                <span class="cs-chip is-accent"><i class="tji-user"></i>Solicitar Demo o Contacto</span>
+              <div class="cs-funnel">
+                <div class="cs-funnel-item"><div class="cs-node"><i class="tji-home"></i><span>Home</span></div></div>
+                <span class="cs-funnel-connector"><i class="tji-arrow-right-3"></i></span>
+                <div class="cs-funnel-item"><div class="cs-node"><i class="tji-subtitle-2"></i><span>Blog</span></div></div>
+                <span class="cs-funnel-connector"><i class="tji-arrow-right-3"></i></span>
+                <div class="cs-funnel-item"><div class="cs-node"><i class="tji-network"></i><span>Soluciones</span></div></div>
+                <span class="cs-funnel-connector"><i class="tji-arrow-right-3"></i></span>
+                <div class="cs-funnel-item"><div class="cs-node"><i class="tji-award"></i><span>Casos de Éxito</span></div></div>
+                <span class="cs-funnel-connector"><i class="tji-arrow-right-3"></i></span>
+                <div class="cs-funnel-item"><div class="cs-node"><i class="tji-cloud"></i><span>Materiales y Webinars</span></div></div>
+                <span class="cs-funnel-connector"><i class="tji-arrow-right-3"></i></span>
+                <div class="cs-funnel-item"><div class="cs-node is-accent"><i class="tji-user"></i><span>Solicitar Demo o Contacto</span></div></div>
               </div>
             </div>
           </section>
@@ -537,10 +543,10 @@
             <div class="cs-container">
               <h3>Resultado</h3>
               <div class="cs-icon-grid">
-                <div class="cs-icon-card"><i class="tji-growth"></i><span>Sitio Escalable</span></div>
-                <div class="cs-icon-card"><i class="tji-subtitle-2"></i><span>Contenido Autogestionable</span></div>
-                <div class="cs-icon-card"><i class="tji-chart"></i><span>SEO por Solución</span></div>
-                <div class="cs-icon-card"><i class="tji-hand"></i><span>Flujo de Conversión</span></div>
+                <div class="cs-node"><i class="tji-growth"></i><span>Sitio Escalable</span></div>
+                <div class="cs-node"><i class="tji-subtitle-2"></i><span>Contenido Autogestionable</span></div>
+                <div class="cs-node"><i class="tji-chart"></i><span>SEO por Solución</span></div>
+                <div class="cs-node"><i class="tji-hand"></i><span>Flujo de Conversión</span></div>
               </div>
               <p class="cs-result-note">El sitio actual de Marker comunica cifras propias de su operación —más de 80M de kilómetros optimizados, 25% de reducción promedio en costos logísticos y combustible, más de 500K entregas diarias gestionadas y más de 200 empresas en LATAM—. Estos datos pertenecen al negocio de Marker: no son resultados atribuibles al trabajo de Studio Complex.</p>
             </div>

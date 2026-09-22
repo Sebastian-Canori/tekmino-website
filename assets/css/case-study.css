@@ -13,8 +13,19 @@
 }
 
 /* ---------- Hero ---------- */
+/* header-area.header-absolute floats over the page (position:absolute), so
+   the first section needs the same top clearance the theme's own
+   .tj-page-header used (padding-top:272px) or the header covers the title. */
+.cs-hero-section {
+  padding-top: 272px;
+}
+@media (max-width: 767px) {
+  .cs-hero-section {
+    padding-top: 200px;
+  }
+}
 .cs-hero {
-  padding: 60px 0 70px;
+  padding: 0 0 70px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
@@ -163,26 +174,32 @@
   }
 }
 
-/* ---------- Icon grid ---------- */
+/* ---------- Icon tile (shared by icon grids and diagram nodes) ---------- */
 .cs-icon-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
 }
-.cs-icon-card {
+@media (max-width: 767px) {
+  .cs-icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cs-node {
   background: var(--tj-color-theme-bg);
   border: 1px solid var(--tj-color-border-1);
   border-radius: 12px;
   padding: 22px 14px;
   text-align: center;
 }
-.cs-icon-card i {
+.cs-node i {
   display: block;
   font-size: 26px;
   color: var(--tj-color-theme-primary);
   margin-bottom: 12px;
 }
-.cs-icon-card span {
+.cs-node span {
   display: block;
   font-size: 13px;
   line-height: 1.4;
@@ -190,67 +207,142 @@
   font-family: var(--tj-ff-heading);
   font-weight: var(--tj-fw-medium);
 }
+.cs-node.is-accent {
+  border-color: var(--tj-color-theme-primary);
+}
+.cs-node.is-accent span {
+  color: var(--tj-color-theme-primary);
+}
+.cs-node.cs-node-sm {
+  padding: 14px 10px;
+  min-width: 100px;
+}
+.cs-node.cs-node-sm i {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.cs-node.cs-node-sm span {
+  font-size: 12px;
+}
+
+/* ---------- Diagram: hub-and-spoke tree with connector lines ---------- */
+.cs-tree {
+  padding-top: 6px;
+}
+.cs-tree-root {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+.cs-tree-root::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  width: 1px;
+  height: 30px;
+  background: var(--tj-color-border-1);
+}
+.cs-tree-root .cs-node {
+  width: 140px;
+}
+.cs-tree-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.cs-tree-item {
+  position: relative;
+  padding-top: 30px;
+  flex: 1;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cs-tree-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 30px;
+  background: var(--tj-color-border-1);
+}
+.cs-tree-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--tj-color-border-1);
+}
+.cs-tree-item:only-child::after {
+  display: none;
+}
+.cs-tree-item:first-child:not(:only-child)::after {
+  left: 50%;
+}
+.cs-tree-item:last-child:not(:only-child)::after {
+  right: 50%;
+}
+.cs-tree-item .cs-node {
+  width: 100%;
+}
+.cs-tree-branch {
+  width: 100%;
+  margin-top: 30px;
+}
 
 @media (max-width: 767px) {
-  .cs-icon-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .cs-tree-row {
+    flex-wrap: wrap;
+  }
+  .cs-tree-item {
+    flex-basis: 40%;
+    max-width: none;
+  }
+}
+@media (max-width: 480px) {
+  .cs-tree-item {
+    flex-basis: 100%;
+  }
+  .cs-tree-item::after {
+    display: none;
   }
 }
 
-/* ---------- Diagram (hub + spokes / funnel chips) ---------- */
-.cs-diagram {
+/* ---------- Diagram: horizontal funnel ---------- */
+.cs-funnel {
   display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
+  gap: 4px;
 }
-.cs-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--tj-color-theme-bg);
-  border: 1px solid var(--tj-color-border-1);
-  border-radius: 10px;
-  padding: 10px 16px;
-  font-size: 13px;
-  font-family: var(--tj-ff-heading);
-  font-weight: var(--tj-fw-medium);
-  color: var(--tj-color-heading-primary);
-  white-space: nowrap;
+.cs-funnel-item {
+  width: 110px;
 }
-.cs-chip i {
-  color: var(--tj-color-theme-primary);
-  font-size: 15px;
+.cs-funnel-item .cs-node {
+  padding: 16px 8px;
 }
-.cs-chip.is-accent {
-  border-color: var(--tj-color-theme-primary);
-  color: var(--tj-color-theme-primary);
+.cs-funnel-item .cs-node i {
+  font-size: 20px;
+  margin-bottom: 8px;
 }
-.cs-chip.is-accent i {
-  color: var(--tj-color-theme-primary);
+.cs-funnel-item .cs-node span {
+  font-size: 12px;
 }
-.cs-diagram-arrow {
+.cs-funnel-connector {
   color: var(--tj-color-theme-dark-3);
   font-size: 14px;
+  align-self: center;
+  padding: 0 2px;
 }
-.cs-diagram-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.cs-diagram-branch {
-  flex-basis: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-inline-start: 30px;
-  padding-top: 10px;
-  border-top: 1px dashed var(--tj-color-border-1);
-  margin-top: 10px;
-}
-@media (max-width: 575px) {
-  .cs-diagram-branch {
-    margin-inline-start: 0;
+@media (max-width: 767px) {
+  .cs-funnel {
+    justify-content: center;
   }
 }
 
