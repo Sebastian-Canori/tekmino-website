@@ -13934,6 +13934,65 @@ blockquote cite::before {
   }
 }
 
+/* Square variant: a self-contained square graphic (own background/copy baked
+   in) instead of a circular headshot bleeding past the card edge. Scoped to
+   .feature-images-square so the base circular widget (service-details.html)
+   is untouched. */
+.widget-feature-item .feature-images.feature-images-square {
+  width: 399px;
+  height: 399px;
+  border-radius: 16px;
+  margin-inline-start: 0;
+  margin-bottom: 0;
+}
+.widget-feature-item .feature-images.feature-images-square img {
+  margin-top: 0;
+  margin-left: 0;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .widget-feature-item .feature-images.feature-images-square {
+    width: 320px;
+    height: 320px;
+    margin-inline-start: 0;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .widget-feature-item .feature-images.feature-images-square {
+    width: 300px;
+    height: 300px;
+    margin-inline-start: 0;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .widget-feature-item .feature-images.feature-images-square {
+    width: 320px;
+    height: 320px;
+    margin-inline-start: 0;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .widget-feature-item .feature-images.feature-images-square {
+    width: 320px;
+    height: 320px;
+    margin-inline-start: 0;
+  }
+}
+@media (max-width: 575px) {
+  .widget-feature-item .feature-images.feature-images-square {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 400px) {
+  .widget-feature-item .feature-images.feature-images-square {
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
+  }
+}
+
 .details-content-box {
   display: -webkit-box;
   display: -ms-flexbox;
