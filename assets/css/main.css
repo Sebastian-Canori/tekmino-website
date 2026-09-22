@@ -13993,6 +13993,34 @@ blockquote cite::before {
   }
 }
 
+/* Smaller title variant: the base 64px .title (sized for a short template
+   word) clips longer text like "Empecemos" against the card's overflow:
+   hidden edge. Scoped so other .title instances (service-details.html) keep
+   the original size. */
+.widget-feature-item .feature-box .feature-content .title.title-fit {
+  font-size: 40px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .widget-feature-item .feature-box .feature-content .title.title-fit {
+    font-size: 36px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .widget-feature-item .feature-box .feature-content .title.title-fit {
+    font-size: 32px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .widget-feature-item .feature-box .feature-content .title.title-fit {
+    font-size: 36px;
+  }
+}
+@media (max-width: 575px) {
+  .widget-feature-item .feature-box .feature-content .title.title-fit {
+    font-size: 32px;
+  }
+}
+
 .details-content-box {
   display: -webkit-box;
   display: -ms-flexbox;
