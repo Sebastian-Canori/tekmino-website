@@ -10257,10 +10257,14 @@ START: Working process CSS
 }
 
 .process-border {
-  /* 50.2% = the side notch cut into process-item-bg.svg (centered at
-     y=150 of a 299-tall viewBox), not the number badge above the card. */
+  /* Targets the side notch cut into process-item-bg.svg (centered at
+     y=150 of a 299-tall viewBox), not the number badge above the card.
+     The item is wider than the SVG's own 420:299 ratio, so mask-size:
+     cover scales by WIDTH (not height) — the notch lands lower than a
+     naive 150/299=50.2% of the item's height once that width-driven
+     scale is applied and the excess is cropped at the bottom. */
   position: absolute;
-  top: 50.2%;
+  top: 55%;
   left: 50%;
   width: 100%;
   height: 4px;
