@@ -10257,8 +10257,10 @@ START: Working process CSS
 }
 
 .process-border {
+  /* 50.2% = the side notch cut into process-item-bg.svg (centered at
+     y=150 of a 299-tall viewBox), not the number badge above the card. */
   position: absolute;
-  top: 0;
+  top: 50.2%;
   left: 50%;
   width: 100%;
   height: 4px;
