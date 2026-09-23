@@ -15082,7 +15082,7 @@ START: Integration CSS
   padding: 4px 4px 4px 22px;
   border-radius: 999px;
   background: linear-gradient(120deg, var(--tj-color-theme-primary) 0%, #e2621a 100%);
-  color: var(--tj-color-theme-dark);
+  color: var(--tj-color-common-white);
   font-size: 16px;
   font-weight: 700;
   line-height: 1;
@@ -15090,7 +15090,7 @@ START: Integration CSS
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .sc-footer-agenda:hover {
-  color: var(--tj-color-theme-dark);
+  color: var(--tj-color-common-white);
   transform: translateY(-3px);
   box-shadow: 0 16px 34px -10px var(--tj-color-theme-primary);
 }
