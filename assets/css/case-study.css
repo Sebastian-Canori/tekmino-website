@@ -205,18 +205,68 @@
 }
 
 .cs-node {
+  height: 100%;
+  min-height: 148px;
   background: var(--tj-color-theme-bg);
   border: 1px solid var(--tj-color-border-1);
   border-radius: 12px;
   padding: 22px 14px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-.cs-node i {
+.cs-node:hover {
+  transform: translateY(-4px);
+  border-color: var(--tj-color-theme-primary);
+  box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Icon badge — same language as the homepage .service-icon: dark circle
+   that fills with the accent color on hover, icon color inverts on top. */
+.cs-node-icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background-color: var(--tj-color-theme-dark);
+  border: 1px solid var(--tj-color-border-1);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: border-color 0.3s ease-in-out;
+}
+.cs-node-icon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: var(--tj-color-theme-primary);
+  z-index: -1;
+  transform: scale(0);
+  transition: transform 0.35s ease-in-out;
+}
+.cs-node-icon i {
   display: block;
-  font-size: 26px;
+  font-size: 24px;
+  line-height: 1;
   color: var(--tj-color-theme-primary);
-  margin-bottom: 12px;
+  transition: color 0.3s ease-in-out, transform 0.35s ease-in-out;
 }
+.cs-node:hover .cs-node-icon::before {
+  transform: scale(1);
+}
+.cs-node:hover .cs-node-icon i {
+  color: var(--tj-color-theme-dark);
+  transform: rotateY(360deg);
+}
+
 .cs-node span {
   display: block;
   font-size: 13px;
@@ -228,16 +278,24 @@
 .cs-node.is-accent {
   border-color: var(--tj-color-theme-primary);
 }
+.cs-node.is-accent .cs-node-icon {
+  border-color: var(--tj-color-theme-primary);
+}
 .cs-node.is-accent span {
   color: var(--tj-color-theme-primary);
 }
 .cs-node.cs-node-sm {
+  min-height: 118px;
   padding: 14px 10px;
   min-width: 100px;
+  gap: 10px;
 }
-.cs-node.cs-node-sm i {
-  font-size: 20px;
-  margin-bottom: 8px;
+.cs-node.cs-node-sm .cs-node-icon {
+  width: 44px;
+  height: 44px;
+}
+.cs-node.cs-node-sm .cs-node-icon i {
+  font-size: 19px;
 }
 .cs-node.cs-node-sm span {
   font-size: 12px;
@@ -343,11 +401,16 @@
   width: 110px;
 }
 .cs-funnel-item .cs-node {
+  min-height: 118px;
   padding: 16px 8px;
+  gap: 10px;
 }
-.cs-funnel-item .cs-node i {
-  font-size: 20px;
-  margin-bottom: 8px;
+.cs-funnel-item .cs-node-icon {
+  width: 44px;
+  height: 44px;
+}
+.cs-funnel-item .cs-node-icon i {
+  font-size: 19px;
 }
 .cs-funnel-item .cs-node span {
   font-size: 12px;
