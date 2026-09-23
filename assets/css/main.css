@@ -12420,7 +12420,7 @@ START: Breadcrumb CSS
   background-size: cover;
   background-position: top left;
   mix-blend-mode: luminosity;
-  opacity: 0.08;
+  opacity: 0.03;
   z-index: -1;
   pointer-events: none;
 }
