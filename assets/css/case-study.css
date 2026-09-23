@@ -367,9 +367,25 @@
 .cs-tree-item .cs-node {
   width: 100%;
 }
-.cs-tree-branch {
-  width: 100%;
-  margin-top: 30px;
+/* A sub-level row (e.g. what's inside "Soluciones") rendered at full tree
+   width instead of nested inside one narrow .cs-tree-item column — nesting
+   a 4-item row inside a single ~220px column overflowed past the sibling
+   columns and got visually clipped (#1). */
+.cs-tree-sub {
+  margin-top: 40px;
+  padding-top: 26px;
+  border-top: 1px dashed var(--tj-color-border-1);
+  text-align: center;
+}
+.cs-tree-sub-label {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-family: var(--tj-ff-heading);
+  font-size: 12px;
+  font-weight: var(--tj-fw-sbold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tj-color-theme-primary);
 }
 
 @media (max-width: 767px) {
