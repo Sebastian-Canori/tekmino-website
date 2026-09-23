@@ -4819,6 +4819,9 @@ START: Choose CSS
 .choose-box .desc {
   margin-bottom: 0;
 }
+.choose-box .service-list {
+  margin-top: 24px;
+}
 .choose-box:hover .choose-inner {
   border-color: var(--tj-color-theme-primary);
 }
@@ -12425,6 +12428,8 @@ START: Breadcrumb CSS
   color: var(--tj-color-heading-primary);
   line-height: 1;
   margin-bottom: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 .tj-page-link {
   margin-top: 22px;
