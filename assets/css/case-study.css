@@ -6,6 +6,24 @@
   color: var(--tj-color-text-body);
 }
 
+/* Material Symbols (Google) — used for every icon inside this template
+   instead of the theme's tekmino-icon font, for a more precise/legible
+   icon per concept. Loaded only on pages using this template. */
+.cs-case-study .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
 .cs-container {
   max-width: 1200px;
   margin: 0 auto;
