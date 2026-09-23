@@ -91,17 +91,23 @@ START: Theme Default CSS
   --tj-color-heading-primary: #f6f7f7;
   --tj-color-text-body: #bcbdb9;
   --tj-color-text-body-2: #999996;
-  --tj-color-theme-primary: #E8A44F;
-  --tj-color-theme-bg: #191a18;
-  --tj-color-theme-dark: #050505;
+  --tj-color-theme-primary: #F2801E;
+  --tj-color-theme-secondary: #22D3EE;
+  --tj-color-theme-bg: #10151c;
+  --tj-color-theme-dark: #07090c;
   --tj-color-theme-dark-2: #494a46;
   --tj-color-theme-dark-3: #6d6e68;
   --tj-color-white-2: rgba(255, 255, 255, 0.8);
   --tj-color-grey-1: #9692b2;
   --tj-color-grey-2: #78758f;
   --tj-color-grey-3: rgba(150, 146, 178, 0.8);
-  --tj-color-border-1: #282926;
+  --tj-color-border-1: #1e2731;
   --tj-color-golden-1: #fdb900;
+  --sc-surface-1: #10151c;
+  --sc-surface-2: #07090c;
+  --sc-border: #1e2731;
+  --sc-ink-accent: #F2801E;
+  --sc-ink-accent-2: #22D3EE;
 }
 
 * {
